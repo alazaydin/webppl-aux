@@ -31,3 +31,8 @@ var s = [{"cough":true,"fever":false,"chestPain":false,"shortnessOfBreath":true}
          {"cough":true,"fever":false,"chestPain":false,"shortnessOfBreath":true}]
 
 countCategorical(s)
+
+// example:
+// use viz.bar(_.keys(f()), countCategorical(repeat(10000, f)))
+// to visualize symptoms given in the medical diagnosis example
+// from probmods: https://probmods.org/chapters/generative-models.html
