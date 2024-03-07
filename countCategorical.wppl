@@ -1,0 +1,33 @@
+// If your samples are stored in a list of objects with certain properties
+// (variables) and they are binary, this function counts your samples.
+
+var countCategorical = function(samples){
+  var zeros = function(n){
+    map(function(x){x*0},
+        _.range(n))
+  }
+
+  var ones = function(n){
+    map(function(x){x+1},
+        zeros(n))
+  }
+
+  var add2 = function(l1, l2){
+    map2(function(x,y){x+y},
+         l1, l2)
+  }
+  reduce(
+    function(s, acc){
+      var vals = _.values(s)
+      add2(acc, vals)
+    },
+    zeros(_.size(samples[0])),
+    samples
+  )
+}
+
+var s = [{"cough":true,"fever":false,"chestPain":false,"shortnessOfBreath":true},
+         {"cough":true,"fever":true,"chestPain":false,"shortnessOfBreath":true},
+         {"cough":true,"fever":false,"chestPain":false,"shortnessOfBreath":true}]
+
+countCategorical(s)
