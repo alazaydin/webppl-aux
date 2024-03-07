@@ -36,3 +36,4 @@ countCategorical(s)
 // use viz.bar(_.keys(f()), countCategorical(repeat(10000, f)))
 // to visualize symptoms given in the medical diagnosis example
 // from probmods: https://probmods.org/chapters/generative-models.html
+// (thunk the code into f first)
